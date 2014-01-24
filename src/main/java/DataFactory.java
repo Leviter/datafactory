@@ -1,3 +1,4 @@
+import factory.AddressesFactory;
 import factory.NamesFactory;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -10,9 +11,11 @@ public class DataFactory {
 
 	private static Random random = new Random(System.nanoTime());
 
+	private AddressesFactory addressesFactory;
 	private NamesFactory namesFactory;
 
 	public DataFactory(Locale locale) {
+		addressesFactory = new AddressesFactory(locale);
 		namesFactory = new NamesFactory(locale);
 	}
 
@@ -30,6 +33,11 @@ public class DataFactory {
 		}
 
 		return getItem(Arrays.asList(items));
+	}
+
+
+	public String getCity() {
+		return getItem(addressesFactory.getAddresses().getCities());
 	}
 
 	public String getLastName() {
