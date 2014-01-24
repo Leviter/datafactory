@@ -40,6 +40,22 @@ public class DataFactory {
 		return getItem(addressesFactory.getAddresses().getCities());
 	}
 
+	public String getFullName() {
+		String firstName = getFirstName();
+		String middleName = getMiddleName();
+		String lastName = getLastName();
+
+		StringBuilder result = new StringBuilder();
+
+		result.append(firstName).append(" ");
+		if (!middleName.isEmpty()) {
+			result.append(middleName).append(" ");
+		}
+		result.append(lastName);
+
+		return result.toString();
+	}
+
 	public String getLastName() {
 		return getItem(namesFactory.getNames().getLastNames());
 	}
