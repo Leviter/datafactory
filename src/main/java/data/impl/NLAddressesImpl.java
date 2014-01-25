@@ -57,4 +57,14 @@ public class NLAddressesImpl implements Addresses {
 		return cities;
 	}
 
+	private static String[] states = {
+			"Friesland", "Groningen", "Drenthe", "Overijssel", "Gelderland", "Noord-Brabant", "Utrecht", "Zuid-Holland",
+			"Noord-Holland", "Zeeland", "Flevoland", "Limburg"
+	};
+
+	@Override
+	public String[] getStates() {
+		return states;
+	}
+
 }

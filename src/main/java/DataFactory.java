@@ -40,6 +40,10 @@ public class DataFactory {
 		return getItem(addressesFactory.getAddresses().getCities());
 	}
 
+	public String getState() {
+		return getItem(addressesFactory.getAddresses().getStates());
+	}
+
 	public String getFullName() {
 		String firstName = getFirstName();
 		String middleName = getMiddleName();
