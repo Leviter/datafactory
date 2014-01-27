@@ -9,6 +9,12 @@ Supported countries:
 - The Netherlands
 
 For Germany it is possible to:
+- Get a first name (mix from male/female names)
+- Get a first name (female)
+- Get a first name (male)
+- Get a full name (combination of first, middle and last name)
+- Get a last name
+- Get a prefix name
 - Get a city
 - Get a state
 
@@ -18,7 +24,7 @@ For The Netherlands it is possible to:
 - Get a first name (male)
 - Get a full name (combination of first, middle and last name)
 - Get a last name
-- Get a middle name
+- Get a prefix name
 - Get a city
 - Get a state
 
