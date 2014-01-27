@@ -19,6 +19,11 @@ public class DataFactory {
 		namesFactory = new NamesFactory(locale);
 	}
 
+	public DataFactory(Locale locale, long seed) {
+		this(locale);
+		random = new Random(seed);
+	}
+
 	protected <T> T getItem(List<T> items) {
 		if ((items == null) || (items.size() == 0)) {
 			return null;

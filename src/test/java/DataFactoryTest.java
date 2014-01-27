@@ -10,6 +10,19 @@ public class DataFactoryTest {
 	private DataFactory dataFactory = new DataFactory(null);
 
 	@Test
+	public void testConstructorWithSeedReturnsAlwaysTheSameItem() {
+		String[] data = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+
+		DataFactory dataFactory = new DataFactory(null, 1);
+		String result1 = dataFactory.getItem(data);
+
+		dataFactory = new DataFactory(null, 1);
+		String result2 = dataFactory.getItem(data);
+
+		assertEquals(result1, result2);
+	}
+
+	@Test
 	public void testGetItemListReturnsItemWhenListContainsOnlyOneElement() {
 		final String expected = "Single item";
 		final List<String> items = new ArrayList<String>();
