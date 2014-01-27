@@ -1,6 +1,7 @@
 package factory;
 
 import data.Addresses;
+import data.impl.DEAddressesImpl;
 import data.impl.NLAddressesImpl;
 import lombok.Getter;
 
@@ -15,6 +16,9 @@ public class AddressesFactory {
 		if (locale != null) {
 			// Use the country based on the ISO 3166-2 code
 			switch (locale.getCountry()) {
+				case "DE":
+					addresses = new DEAddressesImpl();
+					break;
 				case "NL":
 					addresses = new NLAddressesImpl();
 					break;
