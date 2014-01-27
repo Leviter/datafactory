@@ -1,5 +1,7 @@
-import factory.AddressesFactory;
-import factory.NamesFactory;
+package org.paragon.datafactory;
+
+import org.paragon.datafactory.factory.AddressesFactory;
+import org.paragon.datafactory.factory.NamesFactory;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Arrays;

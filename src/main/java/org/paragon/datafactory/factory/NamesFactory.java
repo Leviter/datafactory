@@ -1,7 +1,7 @@
-package factory;
+package org.paragon.datafactory.factory;
 
-import data.Names;
-import data.impl.NLNamesImpl;
+import org.paragon.datafactory.data.Names;
+import org.paragon.datafactory.data.impl.NLNamesImpl;
 import lombok.Getter;
 
 import java.util.Locale;

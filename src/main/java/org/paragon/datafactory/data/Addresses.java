@@ -1,4 +1,4 @@
-package data;
+package org.paragon.datafactory.data;
 
 public interface Addresses {
 

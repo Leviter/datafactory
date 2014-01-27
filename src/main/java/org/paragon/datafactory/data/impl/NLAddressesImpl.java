@@ -1,6 +1,6 @@
-package data.impl;
+package org.paragon.datafactory.data.impl;
 
-import data.Addresses;
+import org.paragon.datafactory.data.Addresses;
 
 public class NLAddressesImpl implements Addresses {
 

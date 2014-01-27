@@ -1,6 +1,6 @@
-package data.impl;
+package org.paragon.datafactory.data.impl;
 
-import data.Names;
+import org.paragon.datafactory.data.Names;
 
 public class NLNamesImpl implements Names {
 
