@@ -1,5 +1,6 @@
 package org.paragon.datafactory;
 
+import org.apache.commons.lang3.StringUtils;
 import org.paragon.datafactory.factory.AddressesFactory;
 import org.paragon.datafactory.factory.NamesFactory;
 import org.apache.commons.lang3.ArrayUtils;
@@ -27,11 +28,19 @@ public class DataFactory {
 	}
 
 	protected <T> T getItem(List<T> items) {
+		return getItem(items, 0);
+	}
+
+	protected <T> T getItem(List<T> items, int probabilityOnEmpty) {
 		if ((items == null) || (items.size() == 0)) {
 			return null;
 		}
 
-		return items.get(random.nextInt(items.size()));
+		if ((probabilityOnEmpty != 0) && (random.nextInt(100) <= probabilityOnEmpty)) {
+			return null;
+		} else {
+			return items.get(random.nextInt(items.size()));
+		}
 	}
 
 	protected <T> T getItem(T[] items) {
@@ -39,9 +48,12 @@ public class DataFactory {
 			return null;
 		}
 
-		return getItem(Arrays.asList(items));
+		return getItem(items, 0);
 	}
 
+	protected <T> T getItem(T[] items, int probabilityOnEmpty) {
+		return getItem(Arrays.asList(items), probabilityOnEmpty);
+	}
 
 	public String getCity() {
 		return getItem(addressesFactory.getAddresses().getCities());
@@ -53,14 +65,14 @@ public class DataFactory {
 
 	public String getFullName() {
 		String firstName = getFirstName();
-		String middleName = getMiddleName();
+		String prefixName = getPrefixName();
 		String lastName = getLastName();
 
 		StringBuilder result = new StringBuilder();
 
 		result.append(firstName).append(" ");
-		if (!middleName.isEmpty()) {
-			result.append(middleName).append(" ");
+		if (StringUtils.isNotBlank(prefixName)) {
+			result.append(prefixName).append(" ");
 		}
 		result.append(lastName);
 
@@ -71,8 +83,8 @@ public class DataFactory {
 		return getItem(namesFactory.getNames().getLastNames());
 	}
 
-	public String getMiddleName() {
-		return getItem(namesFactory.getNames().getMiddleNames());
+	public String getPrefixName() {
+		return getItem(namesFactory.getNames().getPrefixNames(), 80);
 	}
 
 	public String getFirstNameFemale() {

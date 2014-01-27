@@ -111,8 +111,7 @@ public class NLNamesImpl implements Names {
 		return lastNames;
 	}
 
-	private static String[] middleNames = {
-			"",
+	private static String[] prefixes = {
 			"aan", "aan de", "aan den", "aan der", "aan het", "aan 't", "an",
 			"bij", "bij de", "bij den", "bij het", "bij 't",
 			"boven d'", "de", "den", "der", "d'", "des",
@@ -129,8 +128,8 @@ public class NLNamesImpl implements Names {
 	};
 
 	@Override
-	public String[] getMiddleNames() {
-		return middleNames;
+	public String[] getPrefixNames() {
+		return prefixes;
 	}
 
 	private static String[] firstNamesFemale = {
