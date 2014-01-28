@@ -1,58 +1,33 @@
 package org.paragon.datafactory;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.paragon.datafactory.factory.AddressesFactory;
 import org.paragon.datafactory.factory.NamesFactory;
-import org.apache.commons.lang3.ArrayUtils;
+import org.paragon.datafactory.factory.TextFactory;
+import org.paragon.datafactory.util.ItemSelector;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 
-public class DataFactory {
-
-	private static Random random = new Random(System.nanoTime());
+public class DataFactory extends ItemSelector {
 
 	private AddressesFactory addressesFactory;
 	private NamesFactory namesFactory;
+	private TextFactory textFactory;
 
 	public DataFactory(Locale locale) {
-		addressesFactory = new AddressesFactory(locale);
-		namesFactory = new NamesFactory(locale);
+		initializeFactories(locale);
 	}
 
 	public DataFactory(Locale locale, long seed) {
-		this(locale);
-		random = new Random(seed);
+		super(seed);
+		initializeFactories(locale);
 	}
 
-	protected <T> T getItem(List<T> items) {
-		return getItem(items, 0);
-	}
-
-	protected <T> T getItem(List<T> items, int probabilityOnEmpty) {
-		if ((items == null) || (items.size() == 0)) {
-			return null;
-		}
-
-		if ((probabilityOnEmpty != 0) && (random.nextInt(100) <= probabilityOnEmpty)) {
-			return null;
-		} else {
-			return items.get(random.nextInt(items.size()));
-		}
-	}
-
-	protected <T> T getItem(T[] items) {
-		if (items == null) {
-			return null;
-		}
-
-		return getItem(items, 0);
-	}
-
-	protected <T> T getItem(T[] items, int probabilityOnEmpty) {
-		return getItem(Arrays.asList(items), probabilityOnEmpty);
+	private void initializeFactories(Locale locale) {
+		addressesFactory = new AddressesFactory(locale);
+		namesFactory = new NamesFactory(locale);
+		textFactory = new TextFactory(locale);
 	}
 
 	public String getCity() {
@@ -97,5 +72,9 @@ public class DataFactory {
 
 	public String getFirstName() {
 		return getItem(ArrayUtils.addAll(namesFactory.getNames().getFirstNamesFemale(), namesFactory.getNames().getFirstNamesMale()));
+	}
+
+	public String getText() {
+		return textFactory.getText().getSentence();
 	}
 }

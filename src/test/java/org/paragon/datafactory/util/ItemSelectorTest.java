@@ -1,26 +1,25 @@
-package org.paragon.datafactory;
+package org.paragon.datafactory.util;
 
 import org.junit.Test;
-import org.paragon.datafactory.DataFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class DataFactoryTest {
+public class ItemSelectorTest {
 
-	private DataFactory dataFactory = new DataFactory(null);
+	private ItemSelector itemSelector = new ItemSelector();
 
 	@Test
 	public void testConstructorWithSeedReturnsAlwaysTheSameItem() {
 		String[] data = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
-		DataFactory dataFactory = new DataFactory(null, 1);
-		String result1 = dataFactory.getItem(data);
+		ItemSelector itemSelector = new ItemSelector(1);
+		String result1 = itemSelector.getItem(data);
 
-		dataFactory = new DataFactory(null, 1);
-		String result2 = dataFactory.getItem(data);
+		itemSelector = new ItemSelector(1);
+		String result2 = itemSelector.getItem(data);
 
 		assertEquals(result1, result2);
 	}
@@ -31,21 +30,21 @@ public class DataFactoryTest {
 		final List<String> items = new ArrayList<String>();
 		items.add(expected);
 
-		assertEquals(expected, dataFactory.getItem(items));
+		assertEquals(expected, itemSelector.getItem(items));
 	}
 
 	@Test
 	public void testGetItemListReturnsNullWhenListContainsNoElements() {
 		final List<String> items = new ArrayList<String>();
 
-		assertEquals(null, dataFactory.getItem(items));
+		assertEquals(null, itemSelector.getItem(items));
 	}
 
 	@Test
 	public void testGetItemListReturnsNullWhenListIsNull() {
 		final List<String> items = null;
 
-		assertEquals(null, dataFactory.getItem(items));
+		assertEquals(null, itemSelector.getItem(items));
 	}
 
 	@Test
@@ -53,20 +52,20 @@ public class DataFactoryTest {
 		final String expected = "Single item";
 		final String[] items = {expected};
 
-		assertEquals(expected, dataFactory.getItem(items));
+		assertEquals(expected, itemSelector.getItem(items));
 	}
 
 	@Test
 	public void testGetItemListReturnsNullWhenArrayContainsNoElements() {
 		final String[] items = {};
 
-		assertEquals(null, dataFactory.getItem(items));
+		assertEquals(null, itemSelector.getItem(items));
 	}
 
 	@Test
 	public void testGetItemListReturnsNullWhenArrayIsNull() {
 		final String[] items = null;
 
-		assertEquals(null, dataFactory.getItem(items));
+		assertEquals(null, itemSelector.getItem(items));
 	}
 }
