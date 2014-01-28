@@ -1,7 +1,7 @@
 Data Factory
 ============
 
-This project enables a developer to generate 'real life' test data. It is possible to get data specific for a given
+This java library enables a developer to generate 'real life' test data. It is possible to get data specific for a given
 country. The data returned is a randomly picked name from a pre-defined list.
 
 Supported countries:
