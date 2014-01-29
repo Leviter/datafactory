@@ -1,6 +1,6 @@
-package org.paragon.datafactory.data.impl;
+package org.theblackproject.datafactory.data.impl;
 
-import org.paragon.datafactory.data.Names;
+import org.theblackproject.datafactory.data.Names;
 
 public class DENamesImpl implements Names {
 

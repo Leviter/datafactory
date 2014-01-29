@@ -1,8 +1,8 @@
-package org.paragon.datafactory.factory;
+package org.theblackproject.datafactory.factory;
 
 import lombok.Getter;
-import org.paragon.datafactory.data.Text;
-import org.paragon.datafactory.data.impl.NLTextImpl;
+import org.theblackproject.datafactory.data.Text;
+import org.theblackproject.datafactory.data.impl.NLTextImpl;
 
 import java.util.Locale;
 

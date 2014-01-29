@@ -1,11 +1,11 @@
-package org.paragon.datafactory;
+package org.theblackproject.datafactory;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.paragon.datafactory.factory.AddressesFactory;
-import org.paragon.datafactory.factory.NamesFactory;
-import org.paragon.datafactory.factory.TextFactory;
-import org.paragon.datafactory.util.ItemSelector;
+import org.theblackproject.datafactory.factory.AddressesFactory;
+import org.theblackproject.datafactory.factory.NamesFactory;
+import org.theblackproject.datafactory.factory.TextFactory;
+import org.theblackproject.datafactory.util.ItemSelector;
 
 import java.util.Locale;
 

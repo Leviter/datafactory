@@ -5,7 +5,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.paragon</groupId>
+	<groupId>org.theblackproject</groupId>
 	<artifactId>datafactory</artifactId>
 
 	<packaging>jar</packaging>

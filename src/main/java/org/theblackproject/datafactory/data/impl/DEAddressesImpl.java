@@ -1,6 +1,6 @@
-package org.paragon.datafactory.data.impl;
+package org.theblackproject.datafactory.data.impl;
 
-import org.paragon.datafactory.data.Addresses;
+import org.theblackproject.datafactory.data.Addresses;
 
 public class DEAddressesImpl implements Addresses {
 

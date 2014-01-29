@@ -1,8 +1,8 @@
-package org.paragon.datafactory.data.impl;
+package org.theblackproject.datafactory.data.impl;
 
 import org.apache.commons.lang3.StringUtils;
-import org.paragon.datafactory.data.Text;
-import org.paragon.datafactory.util.ItemSelector;
+import org.theblackproject.datafactory.data.Text;
+import org.theblackproject.datafactory.util.ItemSelector;
 
 public class NLTextImpl extends ItemSelector implements Text {
 

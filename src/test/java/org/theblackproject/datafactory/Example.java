@@ -1,4 +1,4 @@
-package org.paragon.datafactory;
+package org.theblackproject.datafactory;
 
 import java.util.Locale;
 

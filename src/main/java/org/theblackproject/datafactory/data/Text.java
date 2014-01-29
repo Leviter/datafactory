@@ -1,4 +1,4 @@
-package org.paragon.datafactory.data;
+package org.theblackproject.datafactory.data;
 
 public interface Text {
 
