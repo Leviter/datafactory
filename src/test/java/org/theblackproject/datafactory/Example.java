@@ -21,6 +21,11 @@ public class Example {
 			System.out.println(factory.getText());
 		}
 
+		System.out.println("--- domains -----------");
+		for (int i = 0; i < 10; i++) {
+			System.out.println(factory.getDomain());
+		}
+
 		System.out.println("=== DE ================");
 
 		factory = new DataFactory(new Locale("de", "DE"));

@@ -3,6 +3,7 @@ package org.theblackproject.datafactory;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.theblackproject.datafactory.factory.AddressesFactory;
+import org.theblackproject.datafactory.factory.InternetFactory;
 import org.theblackproject.datafactory.factory.NamesFactory;
 import org.theblackproject.datafactory.factory.TextFactory;
 import org.theblackproject.datafactory.util.ItemSelector;
@@ -14,6 +15,7 @@ public class DataFactory extends ItemSelector {
 	private AddressesFactory addressesFactory;
 	private NamesFactory namesFactory;
 	private TextFactory textFactory;
+	private InternetFactory internetFactory;
 
 	public DataFactory(Locale locale) {
 		initializeFactories(locale);
@@ -28,6 +30,7 @@ public class DataFactory extends ItemSelector {
 		addressesFactory = new AddressesFactory(locale);
 		namesFactory = new NamesFactory(locale);
 		textFactory = new TextFactory(locale);
+		internetFactory = new InternetFactory();
 	}
 
 	public String getCity() {
@@ -77,4 +80,12 @@ public class DataFactory extends ItemSelector {
 	public String getText() {
 		return textFactory.getText().getSentence();
 	}
+
+	public String getDomain() {
+		return internetFactory.getInternet().getDomain() + "." + getItem(internetFactory.getInternet().getTopLevelDomains());
+	}
+
+//	public String getEmailAddress() {
+//		return internetFactory.getEmailAddress();
+//	}
 }
