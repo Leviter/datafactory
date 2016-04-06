@@ -25,6 +25,7 @@ For The Netherlands it is possible to:
 - Get a full name (combination of first, middle and last name)
 - Get a last name
 - Get a prefix name
+- Get a postal code
 - Get a city
 - Get a state
 
