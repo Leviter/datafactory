@@ -6,6 +6,7 @@ import org.theblackproject.datafactory.factory.AddressesFactory;
 import org.theblackproject.datafactory.factory.InternetFactory;
 import org.theblackproject.datafactory.factory.NamesFactory;
 import org.theblackproject.datafactory.factory.TextFactory;
+import org.theblackproject.datafactory.factory.ZipcodesFactory;
 import org.theblackproject.datafactory.util.ItemSelector;
 
 import java.util.Locale;
@@ -16,6 +17,7 @@ public class DataFactory extends ItemSelector {
 	private NamesFactory namesFactory;
 	private TextFactory textFactory;
 	private InternetFactory internetFactory;
+	private ZipcodesFactory zipcodesFactory;
 
 	public DataFactory(Locale locale) {
 		initializeFactories(locale);
@@ -31,6 +33,7 @@ public class DataFactory extends ItemSelector {
 		namesFactory = new NamesFactory(locale);
 		textFactory = new TextFactory(locale);
 		internetFactory = new InternetFactory();
+		zipcodesFactory = new ZipcodesFactory(locale);
 	}
 
 	public String getCity() {
@@ -83,6 +86,10 @@ public class DataFactory extends ItemSelector {
 
 	public String getDomain() {
 		return internetFactory.getInternet().getDomain() + "." + getItem(internetFactory.getInternet().getTopLevelDomains());
+	}
+
+	public String getZipcode() {
+		return getItem(zipcodesFactory.getZipcodes().getZipcodes());
 	}
 
 //	public String getEmailAddress() {

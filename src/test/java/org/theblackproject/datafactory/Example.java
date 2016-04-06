@@ -26,6 +26,11 @@ public class Example {
 			System.out.println(factory.getDomain());
 		}
 
+		System.out.println("--- postal codes ------");
+		for (int i = 0; i < 10; i++) {
+			System.out.println(factory.getZipcode());
+		}
+
 		System.out.println("=== DE ================");
 
 		factory = new DataFactory(new Locale("de", "DE"));
