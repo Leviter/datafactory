@@ -1,8 +1,9 @@
 package org.theblackproject.datafactory.data.impl;
 
-import org.apache.commons.lang3.StringUtils;
 import org.theblackproject.datafactory.data.Text;
 import org.theblackproject.datafactory.util.ItemSelector;
+
+import static org.apache.commons.lang3.StringUtils.capitalize;
 
 public class NLTextImpl extends ItemSelector implements Text {
 
@@ -32,15 +33,15 @@ public class NLTextImpl extends ItemSelector implements Text {
 
 	@Override
 	public String getSentence() {
-		StringBuffer sentence = new StringBuffer();
+		String sentence = "";
 
-		sentence.append(getItem(articles)).append(" ");
-		sentence.append(getItem(nouns)).append(" ");
-		sentence.append(getItem(verbs)).append(" ");
-		sentence.append(getItem(prepositions)).append(" ");
-		sentence.append(getItem(articles)).append(" ");
-		sentence.append(getItem(nouns)).append(".");
+		sentence += getItem(articles) + " ";
+		sentence += getItem(nouns) + " ";
+		sentence += getItem(verbs) + " ";
+		sentence += getItem(prepositions) + " ";
+		sentence += getItem(articles) + " ";
+		sentence += getItem(nouns) + ".";
 
-		return StringUtils.capitalize(sentence.toString());
+		return capitalize(sentence);
 	}
 }
